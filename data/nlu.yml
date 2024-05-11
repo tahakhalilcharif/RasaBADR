@@ -28,3 +28,13 @@ nlu:
     - Account registration
     - I need a new account
     - How to get a new account?
+
+- intent: ask_balance
+  examples: |
+    - What's my account balance?
+    - How much money do I have?
+    - Can you tell me my balance?
+    - What is my current balance?
+    - How much do I have in my account?
+    - Show me my balance
+    - What's my account balance?

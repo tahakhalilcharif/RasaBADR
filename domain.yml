@@ -3,6 +3,7 @@ version: "3.1"
 intents:
   - greet
   - create_account
+  - ask_balance
 
 responses:
   utter_greet:
@@ -11,10 +12,23 @@ responses:
   utter_create_account:
     - text: "Sure! To create an account, please visit this URL: [Sign Up](http://127.0.0.1:8000/products)"
 
+slots: {}
+
 actions:
   - utter_greet
   - utter_create_account
-  
+  - action_check_balance
+
+templates:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+
+  utter_create_account:
+    - text: "Sure! To create an account, please visit this URL: [Sign Up](http://127.0.0.1:8000/products)"
+
+  utter_balance:
+    - text: "Your current balance is {balance}."
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

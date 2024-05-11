@@ -31,6 +31,7 @@ pipeline:
 
 policies: 
   - name: MemoizationPolicy
+    store_entities_as_slots: true
   - name: RulePolicy
   - name: UnexpecTEDIntentPolicy
     max_history: 5
