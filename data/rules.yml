@@ -7,7 +7,52 @@ rules:
       - intent: create_account
       - action: utter_create_account
 
-  - rule: Respond to Greeting
+  - rule: Greet the user
     steps:
       - intent: greet
       - action: utter_greet
+
+  - rule: Say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Handle fallback
+    steps:
+    - intent: nlu_fallback
+    - action: action_default_fallback
+
+  - rule: Check balance
+    steps:
+      - intent: check_balance
+      - action: action_check_balance
+
+  - rule: View transactions
+    steps:
+      - intent: view_transactions
+      - action: action_view_transactions
+
+  - rule: Transfer money
+    steps:
+    - intent: transfer_money
+    - action: action_transfer_money
+    - slot_was_set:
+      - amount: 100000
+      - recipient: 00300060365741820123
+      - source: 00300634013726930090
+    - action: action_transfer_money
+
+  - rule: View account details
+    steps:
+      - intent: view_account_details
+      - action: action_view_account_details
+
+  - rule: Order a new product
+    steps:
+      - intent: order_product
+      - action: action_order_product
+
+  - rule: Check request status
+    steps:
+      - intent: check_status
+      - action: action_check_status

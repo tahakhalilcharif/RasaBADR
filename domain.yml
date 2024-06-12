@@ -1,34 +1,65 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - create_account
-  - ask_balance
-
+- account_documents
+- ask_balance
+- check_status
+- create_account
+- goodbye
+- greet
+- order_product
+- transfer_money
+- view_account_details
+- view_transactions
+entities:
+- recipient
+- source
+- amount
+- product
+slots:
+  amount:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: amount
+  recipient:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: recipient
+  product:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: product
+  source:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: source
 responses:
   utter_greet:
-    - text: "Hello! How can I assist you today?"
-
+  - text: Hello! How can I assist you today?
   utter_create_account:
-    - text: "Sure! To create an account, please visit this URL: [Sign Up](http://127.0.0.1:8000/products)"
-
-slots: {}
-
+  - text: 'Sure! To create an account, please visit this URL: [Sign Up](http://127.0.0.1:8000/inscription)'
+  utter_goodbye:
+  - text: Goodbye!
+  utter_balance:
+  - text: Your current balance is {balance}.
 actions:
-  - utter_greet
-  - utter_create_account
-  - action_check_balance
-
+- action_transfer_money
+- utter_greet
+- display_documents_list
+- utter_create_account
+- action_check_balance
+- action_view_transactions
+- action_view_account_details
+- action_order_product
+- action_check_status
 templates:
   utter_greet:
-    - text: "Hello! How can I assist you today?"
-
+  - text: Hello! How can I assist you today?
   utter_create_account:
-    - text: "Sure! To create an account, please visit this URL: [Sign Up](http://127.0.0.1:8000/products)"
-
-  utter_balance:
-    - text: "Your current balance is {balance}."
-
+  - text: 'Sure! To create an account, please visit this URL: [Sign Up](http://127.0.0.1:8000/inscription)'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

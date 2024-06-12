@@ -6,6 +6,11 @@ stories:
   - intent: greet
   - action: utter_greet
 
+- story: User says goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
 - story: Create Account
   steps:
   - intent: greet
@@ -19,3 +24,44 @@ stories:
   - action: utter_greet
   - intent: ask_balance
   - action: action_check_balance
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: create_account
+  - action: utter_create_account
+  - intent: account_documents
+    entities:
+    - string: documents
+  - action: display_documents_list
+
+- story: User views transactions
+  steps:
+    - intent: view_transactions
+    - action: action_view_transactions
+
+- story: Transfer money
+  steps:
+  - intent: transfer_money
+  - action: action_transfer_money
+  - slot_was_set:
+    - amount: 100000
+    - recipient: 00300060365741820123
+    - source: 00300634013726930090
+  - action: action_transfer_money
+
+- story: User views account details
+  steps:
+    - intent: view_account_details
+    - action: action_view_account_details
+
+- story: User orders a new product
+  steps:
+    - intent: order_product
+    - action: action_order_product
+
+- story: User checks request status
+  steps:
+    - intent: check_status
+    - action: action_check_status

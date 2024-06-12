@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: create_account
   examples: |
     - I want to create an account
@@ -28,7 +26,7 @@ nlu:
     - Account registration
     - I need a new account
     - How to get a new account?
-
+    - How can I open a bank account?
 - intent: ask_balance
   examples: |
     - What's my account balance?
@@ -37,4 +35,46 @@ nlu:
     - What is my current balance?
     - How much do I have in my account?
     - Show me my balance
-    - What's my account balance?
+- intent: account_documents
+  examples: |
+    - What [documents](string) do I need to create a bank account?
+- intent: view_transactions
+  examples: |
+    - Show my recent transactions
+    - Can I see my transaction history?
+    - Show me my last transactions
+    - Display my transaction history
+- intent: view_account_details
+  examples: |
+    - Show my account details
+    - I want to see my account information
+    - Display my account details
+- intent: order_product
+  examples: |
+    - I want to order a new product
+    - Order a new card
+    - Get me a new credit card
+    - I want to request a new product
+- intent: check_status
+  examples: |
+    - What is the status of my request?
+    - Check the status of my card order
+    - How is my application going?
+    - Tell me the status of my request
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye
+    - see you later
+    - talk to you later
+- intent: transfer_money
+  examples: |
+    - I want to transfer money
+    - Transfer 100 dollars to John
+    - Send 50 to my savings account
+    - Make a transfer
+    - Transfer [100000](amount) dollars to [00300060365741820123](recipient) from [00300634013726930090](source)
+    - Send [500](amount) to [00300634013726930090](recipient) from [00300432480267925259](source)
+    - Transfer [2000000](amount) to [00300432480267925259](recipient) from [00300060365741820123](source)
+    - Transfer money to [00300060365741820123](recipient) from [00300634013726930090](source)
+    - Can you send [3000.5](amount) to [00300633513726923560](recipient) from [00300634013726930090](source)
